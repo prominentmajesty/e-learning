@@ -1,0 +1,235 @@
+html, body {
+  height: 100%;
+  cursor: default;
+}
+
+.top-contact {
+	background-color: #f5f5f5;
+	margin-bottom: 0px;
+}
+
+#logo {
+	font-size: 40px;
+}
+
+.top-contact-icons {
+	color: #388e3c; 
+	position: relative;
+	top: 5px;
+	margin: 0 0 0 30px !important;
+}
+
+nav {
+	z-index: 99 !important;
+}
+
+#navigation {
+	height: 64px;
+}
+
+#login-dropdown, #signup-dropdown, #courses-dropdown {
+	position: absolute;
+	top: -64px;
+}
+
+.dropdown-links {
+	background-color: #f5f5f5 !important;
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.dropdown-links:hover {
+	background-color: #328036 !important;
+	color: #ffffff !important;
+} 
+
+.sidenav {
+	background-color: #f5f5f5 !important;
+}
+
+.sidenav .divider {
+    margin: 0 !important;
+}
+
+.side-links:hover {
+	color: #ffffff !important;
+}
+
+.menu-icon {
+	color: #f5f5f5;
+}
+
+.pin-top {
+  	position: relative;
+}
+
+.pin-bottom {
+  	position: relative;
+}
+
+.pushpin {
+	background-color: #b3b31a !important;
+}
+
+.pinned {
+	position: fixed !important;
+  	background-color: #328036 !important;
+}
+
+header, main {
+	padding-left: 300px;
+}
+
+/*Student Login Form Start*/
+
+#form-container {
+    display: flex;
+    align-self: center;
+    top: 50px !important;
+}
+
+form {
+    border: 2px solid #f1f1f1;
+    width: 70% !important;
+    margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+#studentPreloader, #teacherPreloader, #adminPreloader {
+	position: relative;
+	top: 40px;
+	z-index: 99;
+	display: none;
+}
+
+/* .login-form-close-btn {
+	position: relative;
+	top: -50px;
+	color: #c5c5c5;
+	cursor: pointer;
+}
+
+.login-form-close-btn:hover {
+	color: #328036;
+} */
+
+.login-form-avatar {
+	font-size: 80px !important;
+	color: #c5c5c5;
+	cursor: pointer;
+}
+
+.modal {
+	max-width: 40% !important;
+	max-height: 100% !important;
+	background-color: #ffffff !important; 
+	/* padding-top: 50px !important;
+	padding-bottom: 50px !important; */
+}
+
+#adminLogin {
+	padding-top: 20px;
+}
+
+#studentLoginButton, #teacherLoginButton, #adminLoginButton {
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px 0;
+    border: 2px solid #388e3c !important;
+    background-color: #ffffff !important;
+	color: #388e3c !important;
+	cursor: pointer;
+}
+
+#studentLoginButton:hover, #teacherLoginButton:hover, #adminLoginButton {
+    background-color: #388e3c !important;
+    color: #f5f5f5 !important;
+}
+
+.input-field label {
+    color: #c5c5c5;
+}
+
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+	color: #328036 !important;   
+	width: 80% !important;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=password]:focus, .input-field input[type=email]:focus {
+    border-bottom: 1px solid #328036 !important;
+    box-shadow: 0 1px 0 0 #000000 !important;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #328036 !important;
+}
+
+.input-field .prefix.active {
+    color: #328036;
+}
+
+.form-icons {
+    color: #c5c5c5;
+}
+
+#incorrectStudentData {
+	display: none;
+	font-size: 12px !important;
+}
+
+/*Student Login Form End*/
+
+.card-image img {
+	width: 100%;
+	height: 250px !important;
+}
+
+#advert-section .col {
+	margin: 70px 0px !important;
+}
+
+.advert-icons {
+	font-size: 70px;
+	/* color: #388e3c; */
+	color: #c5c5c5;
+}
+
+#popular {
+	background-color: #f5f5f5;
+}
+
+.card {
+	cursor: pointer;
+}
+
+.card-icons {
+	position: relative;
+	font-size: 24px;
+	color: #ffa500;
+}
+
+.title-links:hover {
+	color: #ffa500;
+}
+
+#parallax2-text {
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #f1f1f1;
+	max-width: 60%;
+	padding: 20px;
+	text-align: center;
+	margin: 250px auto;
+}
+
+#parallax3-text {
+	color: #ffffff;
+	margin: 200px 0 0 100px;
+}
+
+#about-us {
+	margin: 80px auto;
+}
+
+
+#top-arrow:hover {
+	color: #ffa500;
+}

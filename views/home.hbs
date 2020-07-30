@@ -1,0 +1,465 @@
+<div style="height: 30px;" class="row top-contact" id="page-top">
+    <div class="col s12 container center">
+        <span>Have any questions?</span>
+        <span><i class="top-contact-icons material-icons preset">phone</i>+2349026425337</span>
+        <span><i class="top-contact-icons material-icons">email</i>nomsouzoanya@yahoo.co.uk</span> 
+    </div>
+</div>
+
+<div id="navigation">
+    <nav class="pushpin">
+        <ul id="login-dropdown" class="dropdown-content">
+            <li><a class="dropdown-links modal-trigger" data-target="studentLoginModal">Student</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links modal-trigger" data-target="teacherLoginModal">Teacher</a></li>
+        </ul>
+        <ul id="signup-dropdown" class="dropdown-content">
+            <li><a class="dropdown-links" href="/students/register">Student</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="/teachers/register">Teacher</a></li>
+        </ul>
+
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#" class="brand-logo"><i id="logo" class="mdi mdi-school"></i>Edufy</a>
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="menu-icon mdi mdi-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="active"><a href=""><i class="nav-icons mdi mdi-home left"></i>Home</a></li>
+                    <li><a href="#!" class="dropdown-trigger" data-target="signup-dropdown"><i class="nav-icons mdi mdi-account-plus left"></i>Register<i class="mdi mdi-menu-down right"></i></a></li>
+                    <li><a href="#!" class="dropdown-trigger" data-target="login-dropdown"><i class="nav-icons mdi mdi-login left"></i>Login<i class="mdi mdi-menu-down right"></i></a></li>
+                    <li><a href="#!" class=" modal-trigger" data-target="admin-modal"><i class="nav-icons mdi mdi-login left" data-target="admin-modal"></i>Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul id="mobile-login-dropdown" class="dropdown-content">
+        <li><a class="dropdown-links modal-trigger" data-target="studentLoginModal">Student</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links modal-trigger" data-target="teacherLoginModal">Teacher</a></li>
+    </ul>
+    <ul id="mobile-signup-dropdown" class="dropdown-content">
+        <li><a class="dropdown-links" href="/students/register">Student</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="/teachers/register">Teacher</a></li>
+    </ul>
+    <ul id="mobile-menu" class="sidenav">
+        <li><a href="#" class="dropdown-links"><i class="green-text text-darken-2 mdi mdi-home"></i>Home</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="#" class="dropdown-trigger" data-target="mobile-signup-dropdown"><i class="green-text text-darken-2 mdi mdi-account-plus"></i>Register</a></li>
+        <li><a href="#" class="dropdown-trigger" data-target="mobile-login-dropdown"><i class="green-text text-darken-2 mdi mdi-login"></i>Login</a></li>
+        <li><a href="#!" class=" modal-trigger" data-target="admin-modal"><i class="nav-icons mdi mdi-login left" data-target="admin-modal"></i>Admin</a></li>
+    </ul>
+</div>
+
+<div id="studentLoginModal" class="modal">
+    <div class="modal-content">
+        <div class="row container" id="studentPreloader">
+            <div class="col s12">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+        <form name="studentLoginForm" method="POST" action="/students/login">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <i class="mdi mdi-account-multiple login-form-avatar"></i>
+                    <h4>Student Login</h4>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-numeric prefix form-icons"></i>
+                        <input type="text" id="regNo" name="regNo" class="validate">
+                        <label for="regNo">Registration Number</label>
+                        <span id="regNoErrorMessage" class="helper-text" data-error="Invalid Registration Number!" data-success=""></span>
+                    </div>
+                </div>
+            
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-lock-outline prefix form-icons"></i>
+                        <input type="password" id="studentPassword" name="studentPassword" class="validate">
+                        <label for="studentPassword">Password</label>
+                        <span id="studentPasswordErrorMessage" class="helper-text" data-error="Please provide your password!" data-success=""></span>
+                    </div>
+                </div>
+                {{!-- <span id="incorrectStudentData" class="red-text">Incorrect Email or Password!</span> --}}
+            </div>
+            <div class="center-align input-field">
+                <button id="studentLoginButton" type="submit">Log in</button>
+            </div>
+            <br>
+            <div class="input-field center-align">
+                <p>Not Registered? <a class="form-links" href="/students/register">Sign up!</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="teacherLoginModal" class="modal">
+    <div class="modal-content">
+        <div class="row container" id="teacherPreloader">
+            <div class="col s12">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+        <form name="TeacherLoginForm" method="POST" action="/teachers/login">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <i class="mdi mdi-account-multiple login-form-avatar"></i>
+                    <h4>Teacher Login</h4>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-email-outline prefix form-icons"></i>
+                        <input type="text" id="teacherID" name="teacherID" class="validate">
+                        <label for="teacherID">ID Number</label>
+                        <span id="teacherIDErrorMessage" class="helper-text" data-error="Invalid ID Number!" data-success=""></span>
+                    </div>
+                </div>
+            
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-lock-outline prefix form-icons"></i>
+                        <input type="password" id="teacherPassword" name="teacherPassword" class="validate">
+                        <label for="teacherPassword">Password</label>
+                        <span  id="teacherPasswordErrorMessage" class="helper-text" data-error="Please provide your password!" data-success=""></span>
+                    </div>
+                </div>
+            </div>
+            <div class="center-align input-field">
+                <button id="teacherLoginButton" type="submit">Log in</button>
+            </div>
+            <br>
+            <div class="input-field center-align">
+                <p>Not Registered? <a class="form-links" href="/teachers/register">Sign up!</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="admin-modal" class="modal">
+    <div class="modal-content">
+        <div class="row container" id="adminPreloader">
+            <div class="col s12">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+        <form id="adminLogin" name="adminLogin" method="POST" action="/admins/login">
+            {{#if adminErrors}}
+                {{#each adminErrors}}
+                    <div>
+                        <p class="red-text text-darken-2 error-messages center">{{this.msg}}</p>
+                    </div>
+                {{/each}}
+            {{/if}}
+            {{#if adminLoginError}}
+                <p class="red-text text-darken-2 error-messages center">{{adminLoginError}}</p>
+            {{/if}}
+            <div class="row">
+                <h4 class="center">Admin Login</h4>
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-account-outline prefix form-icons"></i>
+                        <input type="text" id="adminUsername" name="adminUsername" class="validate">
+                        <label for="adminUsername">Username</label>
+                        <span id="adminUsernameErrorMessage" class="helper-text red-text text-darken-2" data-error="Invalid ID username!">{{adminUsernameError}}</span>
+                    </div>
+                </div>
+            
+                <div class="col s12">
+                    <div class="input-field">
+                        <i class="mdi mdi-lock-outline prefix form-icons"></i>
+                        <input type="password" id="adminPassword" name="adminPassword" class="validate">
+                        <label for="adminPassword">Password</label>
+                        <span  id="adminPasswordErrorMessage" class="helper-text red-text text-darken-2" data-error="Please provide your password!">{{adminPasswordError}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="center-align input-field">
+                <button id="adminLoginButton" type="submit">Log in</button>
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row left">
+                <h1 style="margin-top: 250px;" class="header col s12 light white-text">Tomorrow’s skills today</h1>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="img/parallax1.jpg" alt="Parallax Image"></div>
+</div>
+
+<div>
+    <div class="container ">
+        <h3 class="orange-text center">Welcome to Edufy E-Learning Service</h3>
+        <p>Welcome to <strong>Edufy</strong>,  a smart learning environment where you have unlimited access to materials pertaining to aacademics.</p>
+    </div>
+    <div id="advert-section" class="row center">
+        <div class="col s12 m6 l3">
+            <i class="advert-icons mdi mdi-library-books center"></i>
+            <h5 class="green-text text-darken-2">Books &amp; Library</h5>
+            <p>We have the best books and lecture materials, for your academic needs, up to date and simplified.</p>
+        </div>
+        <div class="col s12 m6 l3">
+            <i class="advert-icons mdi mdi-account-multiple align-center"></i>
+            <h5 class="green-text text-darken-2">Learn from the Experts</h5>
+            <p>GET to meet and glean from people who know better. Knowledge they say is power.</p>
+        </div>
+        <div class="col s12 m6 l3">
+            <i class="advert-icons mdi mdi-school align-center"></i>
+            <h5 class="green-text text-darken-2">Best Online Courses</h5>
+            <p>We offer great courses online free for our students.</p>
+        </div>
+        <div class="col s12 m6 l3">
+            <i class="advert-icons mdi mdi-earth align-center"></i>
+            <h5 class="green-text text-darken-2">Best Industry Leaders</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, error.</p>
+        </div>
+    </div>
+</div>
+
+<div id="popular" class="section">
+    <div class="container">
+        <div class="center">
+            <h5 class="blue-text">Feautured Courses</h5>
+            <p>We feature courses such as Chemistry, Commerce, Physics, Biology.... </p>
+        </div>
+    
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/ecology.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/ecology.jpg" alt="Ecology">
+                            <h5 class="center">Biology</h5>
+                            <h6 class="center"><a href="/books/ecology.pdf" target="_blank" class="title-links">Introduction to Ecology</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>23 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/effective-demand.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/demand.jpeg" alt="Effective Demand">
+                            <h5 class="center">Commerce</h5>
+                            <h6 class="center"><a href="/books/effective-demand.pdf" target="_blank" class="title-links">Effective Demand</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>10 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>3 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/waves-and-optics.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/waves.jpg" alt="Waves">
+                            <h5 class="center">Physics</h5>
+                            <h6 class="center"><a href="/books/waves-and-optics.pdf" target="_blank" class="title-links">Waves and Optics</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>30 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/Introduction-to-algorithms.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/mathematics.jpg" alt="">
+                            <h5 class="center">Computer Studies</h5>
+                            <h6 class="center"><a href="/books/Introduction-to-algorithms.pdf" target="_blank" class="title-links">QBASIC: Novice to Ninja</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>20 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>4 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/introduction-to-hydrocarbons.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/hydrocarbons.png" alt="Hydrocarbons">
+                            <h5 class="center">Chemistry</h5>
+                            <h6 class="center"><a hef="/books/introduction-to-hydrocarbons.pdf" target="_blank" class="title-links">Introduction to Hydrocarbons</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>30 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/matter.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/matter.png" alt="Matter">
+                            <h5 class="center">Physics</h5>
+                            <h6 class="center"><a href="/books/matter.pdf" target="_blank" class="title-links">Matter</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>8 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>3 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/e-business.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/e-business.jpg" alt="Commerce E-Business">
+                            <h5 class="center">Commerce</h5>
+                            <h6 class="center"><a href="/books/e-business.pdf" target="_blank" class="title-links">E-Business</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>19 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>4 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/Introduction-to-algorithms.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/algorithms.jpg" alt="Algorithms">
+                            <h5 class="center">Computer Studies</h5>
+                            <h6 class="center"><a href="/books/Introduction-to-algorithms.pdf" target="_blank" class="title-links">Introduction to Algorithms</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>30 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/faith.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/faith.jpg" alt="Faith">
+                            <h5 class="center">CRS</h5>
+                            <h6 class="center"><a href="/books/matter.pdf" target="_blank" class="title-links">Faith</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>20 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>4 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/Radioactivity.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/radioactivity.png" alt="Radioactivity">
+                            <h5 class="center">Chemistry</h5>
+                            <h6 class="center"><a href="/books/Radioactivity.pdf" target="_blank" class="title-links">Radioactivity</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>28 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/Love.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/love.jpg" alt="Love">
+                            <h5 class="center">CRS</h5>
+                            <h6 class="center"><a href="/books/Love.pdf" target="_blank" class="title-links">Love</a></h6>   
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>25 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <a href="/books/Reproduction.pdf" target="_blank">
+                        <div class="card-image">
+                            <img src="img/reproduction.jpeg" alt="Reproduction">
+                            <h5 class="center">Biology</h5>
+                            <h6 class="center"><a href="/books/Reproduction.pdf" target="_blank" class="title-links">Reproduction</a></h6>
+                        </div>
+                    </a>
+                    <div class="card-action">
+                        <div class="icons">
+                            <i class="mdi mdi-school card-icons"></i><span>30 Students</span>
+                            <i class="mdi mdi-star card-icons"></i><span>5 Ratings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="/img/books.jpg" alt="parallax2"></div>
+    <h2 id="parallax2-text">Content Means Everything</h2>
+</div>
+
+<div>
+    <div class="container" id="about-us">
+        <h4 class="blue-text center">About Us</h4>
+        <p>Edufy is a learning platform for the students and teachers of national comprehensive secondary school. It is geared towards advancing education to the next level and to enable our students to be up to date.</p>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="/img/parallax3.jpg" alt="parallax3"></div>
+    <h2 id="parallax3-text">Bringing People to Learn</h2>
+</div>
+
+<div class="fixed-action-btn">
+    <a href="#page-top" class="z-depth-4 btn-floating fab" id="top"><i id="top-arrow" class="green darken-2 mdi mdi-chevron-up"></i></a>
+</div>

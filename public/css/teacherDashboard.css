@@ -1,0 +1,87 @@
+nav {
+	z-index: 99 !important;
+}
+
+#navigation {
+	height: 64px;
+}
+
+#login-dropdown, #signup-dropdown, #courses-dropdown {
+	position: absolute;
+	top: -64px;
+}
+
+.dropdown-links {
+	background-color: #f5f5f5 !important;
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.dropdown-links:hover {
+	background-color: #328036 !important;
+	color: #ffffff !important;
+} 
+
+.sidenav {
+	background-color: #f5f5f5 !important;
+}
+
+.sidenav .divider {
+    margin: 0 !important;
+}
+
+.side-links:hover {
+	color: #ffffff !important;
+}
+
+.menu-icon {
+	color: #f5f5f5;
+}
+
+.pin-top {
+  	position: relative;
+}
+
+.pin-bottom {
+  	position: relative;
+}
+
+.pinned {
+	position: fixed !important;
+  	background-color: #328036 !important;
+}
+
+header, main {
+	padding-left: 300px;
+}
+
+.collection-header {
+    background-color: #328036 !important;
+    color: #ffffff;
+}
+
+/* #questionHeader {
+	color: rgba(0, 0, 0, 0.5);
+} */
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #328036;
+}
+
+.mdi-close:hover {
+	color: #ef5350 !important;
+}
+
+.faqs {
+	border: 2px solid #f1f1f1;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.mdi-close:hover, {
+	color: #fff;
+}
+
+.delete-icons:hover {
+	color: #ef5350;
+	cursor: pointer;
+}

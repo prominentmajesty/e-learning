@@ -1,0 +1,196 @@
+<div id="navigation" class="scrollspy">
+    <nav class="pushpin green darken-2">
+        {{#if course}}
+            <ul id="courses-dropdown" class="dropdown-content">
+                {{#each course}}
+                    {{#if courses}}
+                        {{#each courses}}
+                            <li><a class="dropdown-links">{{this}}</a></li>
+                            <li class="divider"></li>
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{!-- <ul >
+            <li><a class="dropdown-links" href="#computer-courses">Computer Studies</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="#commerce-courses">Commerce</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="#biology-courses">Biology</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="#chemistry-courses">Chemistry</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="#physics-courses">Physics</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-links" href="#crs-courses">Christian Religious Studies</a></li>
+        </ul> --}}
+
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="" class="brand-logo"><i id="logo" class="mdi mdi-school"></i>Edufy</a>
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="menu-icon mdi mdi-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/"><i class="nav-icons mdi mdi-home left"></i>Home</a></li>
+                    <li class="active"><a href="#"><i class="nav-icons mdi mdi-view-dashboard left"></i>My Dashboard</a></li>
+                    <li><a class="dropdown-trigger" data-target="courses-dropdown"><i class="nav-icons mdi mdi-google-pages left"></i>Courses<i class="mdi mdi-menu-down right"></i></a></li>
+                    <li><a href="/students/logout"><i class="nav-icons mdi mdi-logout left"></i>Logout</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {{#if course}}
+        <ul id="mobile-courses-dropdown" class="dropdown-content">
+            {{#each course}}
+                {{#if courses}}
+                    {{#each courses}}
+                        <li><a class="dropdown-links">{{this}}</a></li>
+                        <li class="divider"></li>
+                    {{/each}}
+                {{/if}}
+            {{/each}}
+        </ul>
+        {{/if}}
+    {{!-- <ul id="mobile-courses-dropdown" class="dropdown-content">
+        <li><a class="dropdown-links" href="#computer-courses">Computer Studies</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="#commerce-courses">Commerce</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="#biology-courses">Biology</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="#chemistry-courses">Chemistry</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="#physics-courses">Physics</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-links" href="#crs-courses">Christian Religious Studies</a></li> --}}
+    </ul>
+    
+    <ul id="mobile-menu" class="sidenav">
+        <li><a href="/" class="dropdown-links"><i class="green-text text-darken-2 mdi mdi-home"></i>Home</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="dropdown-trigger" data-target="mobile-courses-dropdown"><i class="green-text text-darken-2 mdi mdi-google-pages"></i>Courses</a></li>
+        <li class="active"><a href="#">My Dashboard<i class="green-text text-darken-2 mdi mdi-view-dashboard"></i></a></li>
+        <li><a href="/logout"><i class="green-text text-darken-2 mdi mdi-logout"></i>Logout</a></li>
+    </ul>
+</div>
+<div class="container">
+    <h5 id="welcomeMessage">Welcome back {{name}}</h5>
+    <h3 class="green-text text-darken-2 center">Study Materials</h3>
+    <div class="books">
+        {{!-- {{#if books}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                {{#each books}}
+                    <li class="collection-header">{{this.category}}</li>
+                    <li class="collection-item"><a href="/uploads/{{this.bookName}}" target="_blank" data-id="{{this._id}}">{{this.bookTitle}}</a><i class="mdi mdi-close-circle-outline mdi-24px right delete-icons tooltipped" data-tooltip="Remove Material" data-identity="{{this._id}}"></i></li>                       
+                {{/each}}
+            </ul>    
+        {{/if}} --}}
+        {{#if computerBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Computer Studies</li>
+                {{#each computerBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if commerceBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Commerce</li>
+                {{#each commerceBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if biologyBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Biology</li>
+                {{#each biologyBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if chemistryBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Chemistry</li>
+                {{#each chemistryBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if physicsBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Physics</li>
+                {{#each physicsBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if crsBooks}}
+            <ul id="computer-courses" class="scrollspy collection with-header">
+                <li class="collection-header  darken-4">Christian Religious Studies</li>
+                {{#each crsBooks}}
+                    <li class="collection-item  darken-4"><a href="/uploads/{{this.bookName}}" target="_blank">{{this.bookTitle}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </div>
+</div> 
+
+<div class="fixed-action-btn">
+    <a class="btn btn-floating btn-large red lighten-1">
+        <i class="mdi mdi-dots-vertical"></i>
+    </a>
+    <ul>
+        <li><a class="btn-floating purple lighten-3 tooltipped modal-trigger" data-target="answers-modal" data-tooltip="Answered Questions"><i class="mdi mdi-message-alert"></i></a></li>
+        <li><a class="btn-floating blue lighten-2 tooltipped modal-trigger" data-target="questions-modal" data-tooltip="Ask a Question"><i class="mdi mdi-help"></i></a></li>
+        <li><a class="btn-floating yellow darken-2 tooltipped" href="#navigation" id="top" data-tooltip="To page top"><i class="mdi mdi-chevron-up"></i></a></li>
+    </ul>
+</div>
+<div id="questions-modal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s12">
+                <i class="mdi mdi-close mdi-24px modal-close right"></i>
+                <h3 id="questionHeader">Ask A Question</h3>
+                <p>Teachers are just a click away from providing answers to your most in intriguing questions.</p>
+                <div class="input-field">
+                    <textarea name="question" id="question" class="materialize-textarea"></textarea>
+                    <label for="question">Your Question here...</label>
+                </div>
+                <div class="input-field">
+                    <button type="submit" id="askQuestionButton" data-name="{{name}}" class="btn green darken-2">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="answers-modal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s12">
+                <i class="mdi mdi-close mdi-24px modal-close right"></i>
+                <h3 id="questionHeader">Recently Answered Questions</h3>
+                {{#if answeredQuestions}}
+                    {{#each answeredQuestions}}
+                        <div class="answered-questions">
+                            <p  class="flow-text">Question: {{this.question}}</p>
+                            <p>Answer: {{this.answer}}</p>
+                            <p>Aswered By: <span class="green-text text-darken-2">{{this.answeredBy}}</span></p>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <h5>There are no Answered Questions at this time</h5>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+<br>
+</div>
